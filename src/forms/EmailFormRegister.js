@@ -10,7 +10,7 @@ const EmailFormRegister = ({ buttonText, onSubmit, children, onAuthentication })
     const [errorMessage, setErrorMessage] = useState('');
 
     const submit = () => {
-        let user = {username:username,password:password,fullname:fullname,email:email}
+        let user = {username:username,password:password,fullName:fullname,email:email}
             onSubmit(user)
                 .then(async (res) => {
                     await setToken(res.token);

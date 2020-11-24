@@ -2,13 +2,13 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
-import CreateAccountScreen from './src/screens/CreateAccountScreen';
+import CreateAccount from './src/screens/CreateAccount';
 
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     Login: LoginScreen,
-    CreateAccount: CreateAccountScreen,
+    CreateAccount: CreateAccount,
   },
   {
     initialRouteName: 'Home',
