@@ -1,5 +1,6 @@
 import React from "react";
-import {StyleSheet, View, Button, Text} from "react-native";
+import {Dimensions, StyleSheet, View, Button, Text} from "react-native";
+import {calculatePublication} from '../auxiliar/AuxiliarTools.js';
 
 export default function RecommendationsList(props) {
 
@@ -9,6 +10,8 @@ export default function RecommendationsList(props) {
                 : props.score < 2.8 ? 'rgba(247,41,6,1)'
                 : 'rgba(255,220,107,1)');
     }
+
+
     const styles = StyleSheet.create({
         mainContainer: {
             height: 'auto',
@@ -18,54 +21,73 @@ export default function RecommendationsList(props) {
             padding: 20,
             backgroundColor: '#242847',
             borderRadius: 10,
-            width: '60%',
-            maxWidth: '60%',
+            width: '90%',
+            maxWidth: '90%',
         },
         recommendationContainer: {
             flexDirection: 'row',
             justifyContent: 'space-between',
         },
+        informationContainer: {
+            padding: 10,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'stretch',
+            fontSize: Dimensions.get('window').width * 0.04,
+        },
         title: {
             flex: 1,
             padding: 10,
-            fontSize: 25,
+            fontSize: Dimensions.get('window').width * 0.05,
             fontWeight: '700',
-            fontFamily: 'Verdana',
             color: '#b3b8e0',
         },
         score: {
             borderRadius: 50,
-            height: '3.7rem',
-            width: '3.7rem',
+            height: Dimensions.get('window').width * 0.1,
+            width: Dimensions.get('window').width * 0.1,
             alignItems: 'center',
             justifyContent: 'center',
-            fontFamily: 'Verdana',
             backgroundColor: colorSelector()
         }
     })
-    // OnPress function
+    /*// OnPress function
     const handleRedirectSpecific = () => {
         alert("It works!");
         alert(props.id);
-    }
+    }*/
     return (
         <View style={styles.mainContainer}>
             <View style={styles.recommendationContainer}>
                 <Text style={styles.title}>
                     {props.title}
                 </Text>
-                <View style={{flex: 0.1}}/>
                 <View style={styles.score}>
                     <Text style={{color: '#FFF'}}>
                         {props.score}
                     </Text>
                 </View>
             </View>
-            <Text>
-                Que gododea padce
-            </Text>
+            <View style={styles.informationContainer}>
+                <View>
+                    <Text style={{color: '#b3b8e0'}}>
+                        {props.level}
+                    </Text>
+                </View>
+                <View>
+                    <Text style={{color: '#b3b8e0'}}>
+                        {props.creator}
+                    </Text>
+                </View>
+                <View>
+                    <Text style={{color: '#b3b8e0'}}>
+                        {calculatePublication(props.creationDate)}
+                    </Text>
+                </View>
+            </View>
         </View>
 
-    );
+    )
+        ;
 
 }

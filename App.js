@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import RecommendationList from "./components/recommendation-list/Recommendation-list";
+import RecommendationList from "./components/recommendation-list/RecommendationList";
 
 var info = {
     id: "5f99a3ec2eefc3611895fed0",
     creator: "user",
-    title: "Nata's recommendation",
+    title: "Nata's recommendation test",
     description: "This is the first Nata's recommendation",
     language: "spanish",
     level: "Beginner",
@@ -27,7 +27,7 @@ var info = {
         }
     ],
     reported: false,
-    score: 1
+    score: 5
 }
 
 export default function App() {
