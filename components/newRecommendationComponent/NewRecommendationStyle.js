@@ -5,21 +5,13 @@ export const RecommendationStyle = StyleSheet.create({
         flex: 1,
         padding: 10,
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#A7CCE5'
-    },
-    image: {
-        flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center",
-        width: '100%'
+        backgroundColor: '#c5c8e0'
     },
     title:{
-        fontSize: 25,
+        fontSize: 30,
         marginTop: 10,
-        marginBottom: 28,
-        fontWeight: 'bold',
-        color: '#000'
+        marginBottom: 20,
+        fontWeight: 'bold'
     },
     post:{
         width: '100%',
@@ -28,10 +20,9 @@ export const RecommendationStyle = StyleSheet.create({
         borderTopRightRadius: 10,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
-        borderWidth: 2,
+        borderWidth: 3,
         padding: 10,
-        backgroundColor: '#ffffff',
-        margin: 5
+        borderColor: '#000000'
     },
     simpleInput:{
         borderBottomLeftRadius: 5,
@@ -42,7 +33,6 @@ export const RecommendationStyle = StyleSheet.create({
         borderWidth: 1,
         height: 'auto',
         marginTop: 4,
-        marginBottom: 4,
-        padding:10
+        marginBottom: 4
     }
 })
