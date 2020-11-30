@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, Button, TextInput} from "react-native";
+import {View, Text, TextInput} from "react-native";
 import {RecommendationStyle} from "./NewRecommendationStyle";
 
 export default function NewRecommendation({navigation}){
@@ -29,6 +29,9 @@ export default function NewRecommendation({navigation}){
                     editable
                     maxLenght={40}
                 />
+            </View>
+            <View>
+
             </View>
         </View>
     )

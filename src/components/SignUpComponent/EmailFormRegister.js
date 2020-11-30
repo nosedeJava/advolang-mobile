@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
-import { setToken } from '../api/token';
+import { setToken } from '../../api/token';
 
 const EmailFormRegister = ({ buttonText, onSubmit, children, onAuthentication }) => {
     const [username, onChangeUsername] = useState('');

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
-import { createAccount } from '../api/auth';
-import EmailFormRegister from '../forms/EmailFormRegister';
+import { createAccount } from '../../api/auth';
+import EmailFormRegister from './EmailFormRegister';
 
 const CreateAccount = ({ navigation }) => {
   return (

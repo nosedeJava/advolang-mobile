@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
-import { login } from '../api/auth';
-import EmailFormLogin from '../forms/EmailFormLogin';
+import { login } from '../../api/auth';
+import EmailFormLogin from './EmailFormLogin';
 
 const LoginScreen = ({ navigation }) => {
   return (

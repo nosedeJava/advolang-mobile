@@ -5,13 +5,15 @@ export const RecommendationStyle = StyleSheet.create({
         flex: 1,
         padding: 10,
         alignItems: 'center',
-        backgroundColor: '#c5c8e0'
+        justifyContent: 'center',
+        backgroundColor: '#A7CCE5'
     },
     title:{
-        fontSize: 30,
+        fontSize: 25,
         marginTop: 10,
-        marginBottom: 20,
-        fontWeight: 'bold'
+        marginBottom: 28,
+        fontWeight: 'bold',
+        color: '#FFFFFF'
     },
     post:{
         width: '100%',
@@ -22,7 +24,8 @@ export const RecommendationStyle = StyleSheet.create({
         borderBottomRightRadius: 10,
         borderWidth: 3,
         padding: 10,
-        borderColor: '#000000'
+        borderColor: '#000000',
+        backgroundColor: '#ffffff'
     },
     simpleInput:{
         borderBottomLeftRadius: 5,
@@ -34,5 +37,9 @@ export const RecommendationStyle = StyleSheet.create({
         height: 'auto',
         marginTop: 4,
         marginBottom: 4
+    },
+    content:{
+        width: '100%',
+        height: 'auto',
     }
 })
