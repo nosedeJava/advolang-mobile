@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import RecommendationList from "./components/recommendationList/Recommendation";
+import RecommendationList from "./components/recommendationList/RecommendationList";
 
 var info = {
     id: "5f99a3ec2eefc3611895fed0",
@@ -30,12 +30,17 @@ var info = {
     score: 5
 }
 
+
+var arr = [
+    info, info, info
+]
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>Stinky Stilink</Text>
       <StatusBar style="auto" />
-      <RecommendationList {...info}/>
+      <RecommendationList recommendations={arr} />
     </View>
   );
 }

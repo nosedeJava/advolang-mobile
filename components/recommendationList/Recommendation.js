@@ -1,8 +1,8 @@
 import React from "react";
-import {Dimensions, StyleSheet, View, Button, Text} from "react-native";
+import {Dimensions, StyleSheet, View, Text} from "react-native";
 import {calculatePublication} from '../auxiliar/AuxiliarTools.js';
 
-export default function RecommendationsList(props) {
+export default function Recommendation(props) {
 
     const colorSelector = () => {
         return (
