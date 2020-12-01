@@ -10,8 +10,6 @@ export const formatDate=(date)=>{
 export const calculatePublication = (postDate) => {
     let formatPostDate=formatDate(postDate);
     let actualDate = new Date();
-    alert(Date.now());
-    alert(formatPostDate);
     let hours = (Date.now() - formatPostDate.getTime()) / 3600000;
     if (hours >= 24) {
         let days = Math.floor(hours / 24);

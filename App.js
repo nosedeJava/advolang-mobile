@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import RecommendationList from "./components/recommendation-list/RecommendationList";
+import RecommendationList from "./components/recommendationList/Recommendation";
 
 var info = {
     id: "5f99a3ec2eefc3611895fed0",

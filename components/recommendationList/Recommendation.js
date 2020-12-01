@@ -51,14 +51,14 @@ export default function RecommendationsList(props) {
             backgroundColor: colorSelector()
         }
     })
-    /*// OnPress function
+    // OnPress function
     const handleRedirectSpecific = () => {
         alert("It works!");
         alert(props.id);
-    }*/
+    }
     return (
         <View style={styles.mainContainer}>
-            <View style={styles.recommendationContainer}>
+            <View style={styles.recommendationContainer} onStartShouldSetResponder={handleRedirectSpecific}>
                 <Text style={styles.title}>
                     {props.title}
                 </Text>
