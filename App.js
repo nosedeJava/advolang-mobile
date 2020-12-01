@@ -1,55 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import RecommendationList from "./components/recommendationList/RecommendationList";
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-var info = {
-    id: "5f99a3ec2eefc3611895fed0",
-    creator: "user",
-    title: "Nata's recommendation test",
-    description: "This is the first Nata's recommendation",
-    language: "spanish",
-    level: "Beginner",
-    creationDate: "2020-10-28T17:01:32.138+00:00",
-    thumbnail: "casablancas.jpg",
-    resource: "https://www.youtube.com/watch?v=BjC0KUxiMhc&ab_channel=thestrokesVEVO",
-    resourceType: "Url",
-    categories: [
-        {
-            id: "5f850af842e04307a5cf8217",
-            value: "music",
-            popularity: 15
-        },
-        {
-            id: "5f8765bc2e412c2c7d1c4a91",
-            value: "video",
-            popularity: 9
-        }
-    ],
-    reported: false,
-    score: 5
-}
+import LoginScreen from './src/components/LoginComponent/LoginScreen';
+import HomeScreen from './src/components/HomePageComponent/HomeScreen';
+import CreateAccount from './src/components/SignUpComponent/CreateAccount';
+import Menu from './src/components/DrawerComponent/Menu';
 
 
-var arr = [
-    info, info, info
-]
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Stinky Stilink</Text>
-      <StatusBar style="auto" />
-      <RecommendationList recommendations={arr} />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Login: LoginScreen,
+    CreateAccount: CreateAccount,
+    Advolang: Menu
   },
-});
+  {
+    // initialRouteName: 'Home',
+    initialRouteName: 'Advolang'
+  },
+);
+
+export default createAppContainer(AppNavigator);
