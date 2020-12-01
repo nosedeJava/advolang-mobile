@@ -5,7 +5,6 @@ import Menu from "./src/components/DrawerComponent/Menu";
 
 export default function App() {
   const Stack = createStackNavigator();
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="menu">
