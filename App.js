@@ -7,6 +7,7 @@ import CreateAccount from './src/components/SignUpComponent/CreateAccount';
 import Menu from './src/components/DrawerComponent/Menu';
 
 
+
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
