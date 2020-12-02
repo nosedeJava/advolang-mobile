@@ -3,10 +3,11 @@ import {StyleSheet} from "react-native";
 export const RecommendationStyle = StyleSheet.create({
     overview: {
         flex: 1,
-        padding: 10,
-        alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#A7CCE5'
+        resizeMode: 'cover',
+        width: '100%',
+        alignItems: 'center',
+        padding:10
     },
     image: {
         flex: 1,
@@ -19,7 +20,7 @@ export const RecommendationStyle = StyleSheet.create({
         marginTop: 10,
         marginBottom: 28,
         fontWeight: 'bold',
-        color: '#000'
+        color: '#fff'
     },
     post:{
         width: '100%',
