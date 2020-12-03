@@ -10,7 +10,7 @@ import { WebView } from 'react-native-webview';
 import YouTube from 'react-native-youtube';
 import {ResourceController} from './resourcesController/ResourceController';
 import {Card as CardPaper} from "react-native-paper";
-import memoryData from '../recommendationComponent/RecommendationController';
+import {memoryData} from '../recommendationComponent/RecommendationController';
 
 import { Video } from 'expo-av';
 import VideoPlayer from 'expo-video-player'
@@ -19,6 +19,7 @@ export default function SpecificRecommendation({ route, navigation }) {
 
     const currentId = route.params.id;
     const currentRecom = memoryData.find(element => element.id === currentId);
+
     const styles = StyleSheet.create({
         container: {
             backgroundColor: '#FFF',
@@ -32,21 +33,49 @@ export default function SpecificRecommendation({ route, navigation }) {
         generalContainer: {
             backgroundColor: '#FFF',
             flex: 1,
-        }
+        },
+        videoContainer: {
+            alignItems: 'center',
+            justifyContent: 'center'
+        },
     })
-    return (
+
+    const generalContent = () => {
+        return (
+            <CardBase style={{flex: 1, marginLeft: 0, marginRight: 0}}>
+                <Card.Title style={{fontSize: 20, fontWeight: "bold", padding: 15, textAlign: "left"}}>{currentRecom.title}</Card.Title>
+                <Card.Divider/>
+                <Text style={{padding: 10, textAlign: "left"}}>
+                    {currentRecom.description}
+                </Text>
+                <CardBase style={{marginBottom: 15}}>
+                    <ResourceController resource={currentRecom.resource} resourceType={currentRecom.resourceType}/>
+                </CardBase>
+            </CardBase>
+        );
+    }
+
+    const contentWithScrollView = () => {
+        return(
+            <ScrollView  contentContainerStyle={styles.videoContainer}>
+                {generalContent()}
+            </ScrollView>
+        );
+    }
+
+    /*return (
         <View style={styles.generalContainer} >
-            {JSON.stringify(currentRecom)}
+            {alert(JSON.stringify(currentRecom))}
             <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >
                 <Card>
-                    <Card.Title style={{textAlign: "left"}}>HELLO WORLD</Card.Title>
+                    <Card.Title style={{textAlign: "left"}}>{currentRecom.title}</Card.Title>
                     <Card.Divider/>
                     <Text style={{padding: 10, textAlign: "left"}}>
-                        The idea with React Native Elements is more about component structure than actual design.
+                        {currentRecom.description}
                     </Text>
                     <CardPaper.Content>
 
-                        <ResourceController resource={"https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/styles/image_750x424/public/field/image/article/33.jpg?itok=BoGn4zGl"} resourceType="image/jpg"/>
+                        <ResourceController resource={currentRecom.resource} resourceType={currentRecom.resourceType}/>
 
                     </CardPaper.Content>
                 </Card>
@@ -70,10 +99,28 @@ export default function SpecificRecommendation({ route, navigation }) {
                     <Text style={{padding: 10, textAlign: "left"}}>
                         The idea with React Native Elements is more about component structure than actual design.
                     </Text>
-                        <ResourceController resource={"https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3"} resourceType="audio/mp3"/>
+                    <CardBase>
+
+                    <ResourceController resource={"https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3"} resourceType="audio/mp3"/>
+                        </CardBase>
+
                 </Card>
 
             </ScrollView>
         </View>
-  )
+  )*/
+
+   return (
+        <View style={styles.generalContainer} >
+            <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >
+                {(currentRecom.resourceType.toLowerCase().split("/")[0] === "video") ?
+                    contentWithScrollView()
+                :
+                    generalContent()
+
+                }
+
+            </ScrollView>
+        </View>
+    )
 }

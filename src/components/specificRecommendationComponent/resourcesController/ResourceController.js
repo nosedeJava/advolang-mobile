@@ -42,38 +42,27 @@ export function ResourceController(props) {
 
     const audioDiv=(rec)=>{
         return (
-            <CardBase>
-                <CardItem style={{height:300}}>
-                    <WebView
-                        source={{uri: rec}}
-                        style={{marginTop: 20}}
-                    /></CardItem>
-            </CardBase>
+            <CardItem style={{height:200}}>
+                <WebView
+                    source={{uri: rec}}
+                    style={{marginTop: 20}}
+                />
+            </CardItem>
         )
     };
 
     const videoDiv=()=>{
         return (
-
-            <ScrollView  contentContainerStyle={styles.videoContainer}>
-                <Card>
-                    <CardBase>
-                        <CardItem style={{height:300}}>
-                            <VideoPlayer
-                                videoProps={{
-                                    shouldPlay: true,
-                                    resizeMode: Video.RESIZE_MODE_CONTAIN,
-                                    source: {uri: rec},
-                                }}
-                                inFullscreen={true}
-                                videoBackground='transparent'
-                                height={220}
-                            />
-                        </CardItem>
-                    </CardBase>
-                </Card>
-            </ScrollView>
-
+            <VideoPlayer
+                videoProps={{
+                    shouldPlay: true,
+                    resizeMode: Video.RESIZE_MODE_CONTAIN,
+                    source: {uri: rec},
+                }}
+                inFullscreen={true}
+                videoBackground='transparent'
+                height={220}
+            />
         );
     };
 

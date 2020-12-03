@@ -1,6 +1,6 @@
 import React from "react";
 import ListRecommendations from "./ListRecommendations";
-import {View} from "react-native";
+import {View, ScrollView} from "react-native";
 
 export const memoryData = [
     {
@@ -86,8 +86,8 @@ export const memoryData = [
     },
     {
         "id": "5f99a3ec2eefc3611895fed3",
-        "creator": "user video",
-        "title": "Nata's recommendation",
+        "creator": "user",
+        "title": "Nata's recommendation video",
         "description": "This is the first Nata's recommendation",
         "language": "spanish",
         "level": "Beginner",
@@ -145,7 +145,9 @@ export default function RecommendationController({ navigation }) {
 
     return (
         <View style={{width:"100%"}}>
-            <ListRecommendations recommendations={memoryData} nav={navigation}/>
+            <ScrollView>
+                <ListRecommendations recommendations={memoryData} nav={navigation}/>
+            </ScrollView>
         </View>
     );
 }

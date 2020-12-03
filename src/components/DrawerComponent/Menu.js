@@ -20,16 +20,16 @@ export default function Menu() {
 
     const routePathComponents = [
         {
-            path: "New Recommendation",
-            component: NewRecommendation,
+            path: "Overview",
+            component: RecommendationController,
         },
         {
             path: "Languages",
             component: Languages,
         },
         {
-            path: "recoms",
-            component: RecommendationController,
+            path: "New Recommendation",
+            component: NewRecommendation,
         },
         {
             path: "specific",
@@ -64,7 +64,7 @@ export default function Menu() {
     );
 
     return (
-        <Drawer.Navigator
+        <Drawer.Navigator initialRouteName={"Overview"}
             drawerContent={(props) => <CustomDrawerContent {...props} />}
             screenOptions={{
                 headerShown: false,

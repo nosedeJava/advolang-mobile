@@ -3,17 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b647650a-8a96-4e2e-b6de-478484b0a702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrawerComponent/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawerComponent/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePageComponent/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePageComponent/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginComponent/EmailFormLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponent/EmailFormLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginComponent/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponent/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recommendationList/Recommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/Recommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/recommendationList/RecommendationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/ListRecommendations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/recommendationComponent/ListRecommendations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/ListRecommendations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/recommendationComponent/RecommendationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/RecommendationController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/specificRecommendationComponent/SpecificRecommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/specificRecommendationComponent/SpecificRecommendation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/specificRecommendationComponent/resourcesController/ResourceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/specificRecommendationComponent/resourcesController/ResourceController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +63,7 @@
       <workItem from="1606849407932" duration="7090000" />
       <workItem from="1606881126011" duration="8438000" />
       <workItem from="1606916805963" duration="22352000" />
-      <workItem from="1606997049597" duration="22887000" />
+      <workItem from="1606997049597" duration="29287000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,7 @@ const LoginScreen = ({ onSignIn }) => {
     <EmailFormLogin
       buttonText="Log in"
       onSubmit={login}
-      onAuthentication={() => onSignIn}
+      onAuthentication={onSignIn}
     >
       <Button
         title="Create account"

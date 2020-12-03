@@ -1,6 +1,6 @@
 import React from "react";
 import Recommendation from "./Recommendation";
-import {View} from "react-native";
+import {View, ScrollView} from "react-native";
 
 export default function ListRecommendations(props) {
 
@@ -9,8 +9,10 @@ export default function ListRecommendations(props) {
     });
 
     return (
-        <View style={{width:"100%"}}>
+        <View style={{width: "100%"}} >
+
             {listContent}
         </View>
     );
 }
+
