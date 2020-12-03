@@ -1,7 +1,4 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import LoginScreen from "../LoginComponent/LoginScreen";
 import NewRecommendation from "../newRecommendationComponent/NewRecommendation";
 import Languages from "../LanguagesComponent/Languages";
 import SpecificRecommendation from "../specificRecommendationComponent/SpecificRecommendation";
