@@ -3,7 +3,8 @@ import { post } from './fetch';
 export const login = (user, pass) => {
   return post('/api/auth/signin', { 
       username: user, 
-      password: pass 
+      password: pass
+
     });
 };
 

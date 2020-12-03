@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 import {setToken} from '../../api/token';
+
 const HomeScreen = ({ navigation }) => {
   const [errorMessage, setErrorMessage] = useState('');
   let logOut = async () => {

@@ -8,12 +8,15 @@ const EmailFormLogin = ({ buttonText, onSubmit, children, onAuthentication }) =>
   const [errorMessage, setErrorMessage] = useState('');
 
   const submit = () => {
-    onSubmit(username, password)
-      .then(async (res) => {
-        await setToken(res.token);
-        onAuthentication();
-      })
-      .catch((res) => setErrorMessage(res.error));
+      onAuthentication();
+
+      /*onSubmit(username, password)
+        .then(async (res) => {
+            await setToken(res.token);
+            onAuthentication();
+
+        })
+        .catch((res) => setErrorMessage(res.error));*/
   };
 
   return (
