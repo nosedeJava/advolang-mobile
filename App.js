@@ -1,9 +1,11 @@
+import { DrawerActions, NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { NavigationContainer, getFocusedRouteNameFromRoute, DrawerActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text, Button, StyleSheet } from 'react-native';
-
+import { View, Text, StyleSheet } from 'react-native';
 import Menu from "./src/components/DrawerComponent/Menu";
+import {IconButton } from "react-native-paper";
+import { StatusBar } from "expo-status-bar";
 import LoginScreen from "./src/components/LoginComponent/LoginScreen";
 import NewRecommendation from "./src/components/newRecommendationComponent/NewRecommendation";
 import Languages from "./src/components/LanguagesComponent/Languages";
@@ -27,59 +29,37 @@ export default function App() {
         setIsAuthenticated(false);
     };
 
-    const routePathComponents = [
-        {
-            path: "New Recommendation",
-            component: NewRecommendation,
-            show: true
-        },
-        {
-            path: "Languages",
-            component: Languages,
-            show: true
-        },
-        {
-            path: "recoms",
-            component: RecommendationController,
-            show: true
-        },
-        {
-            path: "specific",
-            component: SpecificRecommendation,
-            show: false
-        }
-
-    ]
-
-    const protectedElements = routePathComponents.map((route, i) =>
-        <Stack.Screen key={i} name={route.path} >
-            {(props) => (
-                <route.component  {...props} onSignIn={handleSignIn} />
-            )}
-        </Stack.Screen>
-    );
-
     return (
         <NavigationContainer>
+          <StatusBar barStyle="dark-content" backgroundColor="#2576AD" />
           <Stack.Navigator >
               {isAuthenticated ? (
                   <>
                   <Stack.Screen
                       name="Home"
                       component={Menu}
-                      options={{
-                          title: "Welcome to Advolang!",
-                          headerStyle: {
-                              backgroundColor: "#2576AD",
-                          },
-                          headerTintColor: "#fff",
-                          headerTitleAlign:'center',
-                          headerTitleStyle: {
-                              fontWeight: "bold",
-                          },
-                      }}
-                  />
-
+                      options={({ navigation }) => ({
+                        title: "Advolang App",
+                        headerStyle: {
+                          backgroundColor: "#2576AD",
+                        },
+                        headerTintColor: "#fff",
+                        headerTitleAlign: "center",
+                        headerTitleStyle: {
+                          fontWeight: "bold",
+                        },
+                        headerLeft: () => (
+                          <IconButton
+                            icon="menu"
+                            color="#fff"
+                            onPress={() =>
+                              navigation.dispatch(DrawerActions.toggleDrawer())
+                            }
+                            style={{marginLeft: 15}}
+                          />
+                        ),
+                      })}
+                   />
                   </>
               ) : (
                   <>

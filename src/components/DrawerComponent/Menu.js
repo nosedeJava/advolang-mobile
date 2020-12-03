@@ -15,7 +15,6 @@ import {
 
 
 export default function Menu() {
-
     const Drawer = createDrawerNavigator();
 
     const routePathComponents = [
@@ -73,6 +72,4 @@ export default function Menu() {
 
         </Drawer.Navigator>
     );
-
-
 }
