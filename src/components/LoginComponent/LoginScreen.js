@@ -3,16 +3,17 @@ import { View, Text, Button } from 'react-native';
 import { login } from '../../api/auth';
 import EmailFormLogin from './EmailFormLogin';
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({ onSignIn }) => {
+
   return (
     <EmailFormLogin
       buttonText="Log in"
       onSubmit={login}
-      onAuthentication={() => navigation.navigate('Home')}
+      onAuthentication={() => onSignIn}
     >
       <Button
         title="Create account"
-        onPress={() => navigation.navigate('CreateAccount')}
+        onPress={onSignIn}
       />
     </EmailFormLogin>
   );

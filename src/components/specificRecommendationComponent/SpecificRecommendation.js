@@ -10,10 +10,15 @@ import { WebView } from 'react-native-webview';
 import YouTube from 'react-native-youtube';
 import {ResourceController} from './resourcesController/ResourceController';
 import {Card as CardPaper} from "react-native-paper";
+import memoryData from '../recommendationComponent/RecommendationController';
 
 import { Video } from 'expo-av';
 import VideoPlayer from 'expo-video-player'
-export const SpecificRecommendation = () => {
+
+export default function SpecificRecommendation({ route, navigation }) {
+
+    const currentId = route.params.id;
+    const currentRecom = memoryData.find(element => element.id === currentId);
     const styles = StyleSheet.create({
         container: {
             backgroundColor: '#FFF',
@@ -31,6 +36,7 @@ export const SpecificRecommendation = () => {
     })
     return (
         <View style={styles.generalContainer} >
+            {JSON.stringify(currentRecom)}
             <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >
                 <Card>
                     <Card.Title style={{textAlign: "left"}}>HELLO WORLD</Card.Title>
