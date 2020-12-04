@@ -3,20 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="b647650a-8a96-4e2e-b6de-478484b0a702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawerComponent/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawerComponent/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginComponent/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponent/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/recommendationComponent/ListRecommendations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/ListRecommendations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/recommendationComponent/RecommendationController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/recommendationComponent/RecommendationController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/specificRecommendationComponent/SpecificRecommendation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/specificRecommendationComponent/SpecificRecommendation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/specificRecommendationComponent/resourcesController/ResourceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/specificRecommendationComponent/resourcesController/ResourceController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1l3dcp7PIm0LUK9PqP7F4g8MXWV" />
   <component name="ProjectViewState">
@@ -28,6 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -64,6 +67,8 @@
       <workItem from="1606881126011" duration="8438000" />
       <workItem from="1606916805963" duration="22352000" />
       <workItem from="1606997049597" duration="29287000" />
+      <workItem from="1607038454710" duration="448000" />
+      <workItem from="1607040983263" duration="4305000" />
     </task>
     <servers />
   </component>
@@ -80,5 +85,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
