@@ -63,53 +63,6 @@ export default function SpecificRecommendation({ route, navigation }) {
         );
     }
 
-    /*return (
-        <View style={styles.generalContainer} >
-            {alert(JSON.stringify(currentRecom))}
-            <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >
-                <Card>
-                    <Card.Title style={{textAlign: "left"}}>{currentRecom.title}</Card.Title>
-                    <Card.Divider/>
-                    <Text style={{padding: 10, textAlign: "left"}}>
-                        {currentRecom.description}
-                    </Text>
-                    <CardPaper.Content>
-
-                        <ResourceController resource={currentRecom.resource} resourceType={currentRecom.resourceType}/>
-
-                    </CardPaper.Content>
-                </Card>
-
-                <Card>
-                    <Card.Title style={{textAlign: "left"}}>HELLO WORLD</Card.Title>
-                    <Card.Divider/>
-                    <Text style={{padding: 10, textAlign: "left"}}>
-                        The idea with React Native Elements is more about component structure than actual design.
-                    </Text>
-                    <CardPaper.Content>
-                        <ResourceController resource={"https://www.youtube.com/watch?v=Kmiw4FYTg2U"} resourceType="url"/>
-                    </CardPaper.Content>
-                </Card>
-
-                <ResourceController resource={"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"} resourceType="video/mp4"/>
-
-                <Card>
-                    <Card.Title style={{textAlign: "left"}}>HELLO WORLD</Card.Title>
-                    <Card.Divider/>
-                    <Text style={{padding: 10, textAlign: "left"}}>
-                        The idea with React Native Elements is more about component structure than actual design.
-                    </Text>
-                    <CardBase>
-
-                    <ResourceController resource={"https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3"} resourceType="audio/mp3"/>
-                        </CardBase>
-
-                </Card>
-
-            </ScrollView>
-        </View>
-  )*/
-
    return (
         <View style={styles.generalContainer} >
             <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >
