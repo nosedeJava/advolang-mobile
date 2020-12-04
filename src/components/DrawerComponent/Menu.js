@@ -59,7 +59,6 @@ export default function Menu() {
         <Drawer.Screen key={"item" + i}
                        name={route.path}
                        component={route.component}
-
         />
     );
 
@@ -70,7 +69,6 @@ export default function Menu() {
                 headerShown: false,
             }}>
             {protectedElements}
-
         </Drawer.Navigator>
     );
 

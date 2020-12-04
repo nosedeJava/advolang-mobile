@@ -142,7 +142,7 @@ export const memoryData = [
 
 export default function RecommendationController({ navigation }) {
 
-
+    
     return (
         <View style={{width:"100%"}}>
             <ScrollView>

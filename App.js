@@ -9,7 +9,7 @@ import NewRecommendation from "./src/components/newRecommendationComponent/NewRe
 import Languages from "./src/components/LanguagesComponent/Languages";
 import SpecificRecommendation from "./src/components/specificRecommendationComponent/SpecificRecommendation";
 import RecommendationController from "./src/components/recommendationComponent/RecommendationController";
-
+import {getToken} from "./src/api/token"
 export default function App() {
 
     const Stack = createStackNavigator();
@@ -17,8 +17,6 @@ export default function App() {
     const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
     const handleSignIn = () => {
-        alert("okaa")
-
         setIsAuthenticated(true);
     };
 

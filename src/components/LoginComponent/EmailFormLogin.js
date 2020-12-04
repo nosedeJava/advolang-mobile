@@ -8,27 +8,24 @@ const EmailFormLogin = ({ buttonText, onSubmit, children, onAuthentication }) =>
   const [errorMessage, setErrorMessage] = useState('');
 
   const submit = () => {
-      onAuthentication();
-
-      /*onSubmit(username, password)
-        .then(async (res) => {
-            await setToken(res.token);
-            onAuthentication();
-
-        })
-        .catch((res) => setErrorMessage(res.error));*/
+    onSubmit(username, password)
+      .then(async (res) => {
+        await setToken(res.token);
+        onAuthentication();
+      })
+      .catch((res) => setErrorMessage(res.error));
   };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TextInput
-        placeholder = "Username"
+        placeholder="Username"
         style={styles.input}
         onChangeText={(text) => onChangeUsername(text)}
         value={username}
       />
       <TextInput
-        placeholder = "Password"
+        placeholder="Password"
         style={styles.input}
         onChangeText={(text) => onChangePassword(text)}
         value={password}
