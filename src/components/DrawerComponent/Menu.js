@@ -8,6 +8,7 @@ import {
     DrawerContentScrollView,
     DrawerItemList,
 } from '@react-navigation/drawer';
+import Settings from "../SettingsComponent/Settings";
 
 
 
@@ -30,6 +31,10 @@ export default function Menu() {
         {
             path: "specific",
             component: SpecificRecommendation,
+        },
+        {
+            path: "Settings",
+            component: Settings
         }
     ]
 
