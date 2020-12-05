@@ -1,16 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, View, StyleSheet} from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import { Card as CardBase, CardItem } from 'native-base';
+import { useIsFocused } from '@react-navigation/native'
 
 import {ResourceController} from './resourcesController/ResourceController';
-import {memoryData} from '../recommendationComponent/RecommendationController';
+import {get} from "../../api/fetch";
 
 
 export default function SpecificRecommendation({ route, navigation }) {
 
-    const currentId = route.params.id;
-    const currentRecom = memoryData.find(element => element.id === currentId);
+    const isFocused = useIsFocused();
+    let currentId= route.params.id;
+
+    const [currentRecom, setCurrentRecom] = useState();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(()=>{
+        componentDidMount();
+    }, [isFocused]);
+
+    const componentDidMount = async() => {
+        setCurrentRecom(await get('/api/spanish/recommendations/'+currentId));
+
+        setLoading(false);
+    }
 
     const styles = StyleSheet.create({
         container: {
@@ -41,20 +55,28 @@ export default function SpecificRecommendation({ route, navigation }) {
                     {currentRecom.description}
                 </Text>
                 <CardBase style={{marginBottom: 15}}>
-                    <ResourceController resource={currentRecom.resource} resourceType={currentRecom.resourceType}/>
+                    {rec(currentRecom)}
                 </CardBase>
             </CardBase>
         );
     }
 
+    const rec = (recom) => {
+        return <ResourceController resource={recom.resource} resourceType={recom.resourceType}/>
+
+    }
     const contentWithScrollView = () => {
         return(
             <ScrollView  contentContainerStyle={styles.videoContainer}>
+
                 {generalContent()}
             </ScrollView>
         );
     }
 
+    if(loading){
+        return <View><Text>Loading...</Text></View>;
+    }
    return (
         <View style={styles.generalContainer} >
             <ScrollView style={{borderWidth:3, borderColor : 'transparent', flex:1}} >

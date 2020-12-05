@@ -53,9 +53,7 @@ export default function Recommendation(props) {
     })
     // OnPress function
     const handleRedirectSpecific = () => {
-        alert("It works!");
-        alert(props.id);
-        props.nav.navigate('specific', {id: props.id})
+        props.nav.navigate('specific', {"id": props.id})
     }
     return (
         <View style={styles.mainContainer}>

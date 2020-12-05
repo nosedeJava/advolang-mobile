@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 import {Text, View, TouchableOpacity, Alert, Dimensions, StyleSheet, ScrollView} from 'react-native';
 import RNUrlPreview from "react-native-url-preview";
@@ -13,11 +13,13 @@ import {WebView} from "react-native-webview";
 
 
 export function ResourceController(props) {
-    const rec = props.resource;
     const type = props.resourceType.toLowerCase();
 
+    const [rec, setRec] = useState(props.resource);
     const [isPlaying, setIsPlaying] = useState(false);
 
+    useEffect(()=>{
+alert("controlllller2")    }, [rec]);
 
     const styles = StyleSheet.create({
         container: {

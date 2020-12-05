@@ -7,7 +7,7 @@ export const getToken = async () => {
       return value;
     }
   } catch (e) {
-    return null;
+    alert(e)
   }
 };
 
@@ -15,6 +15,6 @@ export const setToken = async (token) => {
   try {
     await AsyncStorage.setItem('auth_token', token);
   } catch (e) {
-    return null;
+    alert(e)
   }
 };
