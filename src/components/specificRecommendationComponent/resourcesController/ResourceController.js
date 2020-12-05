@@ -1,25 +1,30 @@
-import React, {useEffect, useState} from 'react';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
-import {Text, View, TouchableOpacity, Alert, Dimensions, StyleSheet, ScrollView} from 'react-native';
-import RNUrlPreview from "react-native-url-preview";
-import { Card as CardPaper, Title, Paragraph } from 'react-native-paper';
+import React, {useEffect} from 'react';
+import { Card } from 'react-native-elements'
+import {View, SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 
 import { Video } from 'expo-av';
 import VideoPlayer from 'expo-video-player'
-import SoundPlayer from 'react-native-sound-player'
-import ReactAudioPlayer from 'react-audio-player';
-import {Card as CardBase, CardItem} from "native-base";
+import {CardItem} from "native-base";
 import {WebView} from "react-native-webview";
 
+import preview from 'react-native-page-previewer';
 
-export function ResourceController(props) {
-    const type = props.resourceType.toLowerCase();
 
-    const [rec, setRec] = useState(props.resource);
-    const [isPlaying, setIsPlaying] = useState(false);
+const defaultAzureRecs = [
+    {
+        "image": "https://www.flashlyrics.com/image/tw/keane/disconnected-09"
+    },
+    {
+        "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    },
+    {
+        audio: "https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3"
+    }
+]
 
-    useEffect(()=>{
-alert("controlllller2")    }, [rec]);
+export function ResourceController ({recom }) {
+    const rec = recom.resource;
+    const type = recom.resourceType.toLowerCase();
 
     const styles = StyleSheet.create({
         container: {
@@ -38,15 +43,15 @@ alert("controlllller2")    }, [rec]);
 
     const imageDiv=()=>{
         return (
-            <Card.Image source={{uri: rec}} />
+            <Card.Image source={{uri: "https://www.flashlyrics.com/image/tw/keane/disconnected-09"}} />
         );
     };
 
-    const audioDiv=(rec)=>{
+    const audioDiv=()=>{
         return (
             <CardItem style={{height:200}}>
                 <WebView
-                    source={{uri: rec}}
+                    source={{uri: "https://ia800204.us.archive.org/11/items/hamlet_0911_librivox/hamlet_act3_shakespeare.mp3"}}
                     style={{marginTop: 20}}
                 />
             </CardItem>
@@ -59,7 +64,7 @@ alert("controlllller2")    }, [rec]);
                 videoProps={{
                     shouldPlay: true,
                     resizeMode: Video.RESIZE_MODE_CONTAIN,
-                    source: {uri: rec},
+                    source: {uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"},
                 }}
                 inFullscreen={true}
                 videoBackground='transparent'
@@ -70,15 +75,13 @@ alert("controlllller2")    }, [rec]);
 
     const urlTextDiv = () => {
         return (
-            <TouchableOpacity>
-                <RNUrlPreview text={rec}/>
-            </TouchableOpacity>
+            <WebView source={{uri: rec}} style={{height: 250}}/>
         );
     }
 
     const options = () => {
         if(type === 'url'){
-            return urlTextDiv()
+            return urlTextDiv();
         }
 
         const typeParts = type.split("/");
@@ -93,10 +96,13 @@ alert("controlllller2")    }, [rec]);
         }
 
         if(specificType === "audio"){
-            return audioDiv(rec);
+            return audioDiv();
         }
     }
+    useEffect(()=>{
+    }, [urlTextDiv]);
 
-    return <View>{options()}</View>;
+    return <SafeAreaView>{options()}</SafeAreaView>;
+
 
 }

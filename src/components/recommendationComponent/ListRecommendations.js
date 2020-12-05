@@ -1,6 +1,6 @@
 import React from "react";
 import Recommendation from "./Recommendation";
-import {View, ScrollView} from "react-native";
+import {SafeAreaView} from "react-native";
 
 export default function ListRecommendations(props) {
     const listContent = props.recommendations.map((recommendation, i) => {
@@ -8,9 +8,9 @@ export default function ListRecommendations(props) {
     });
 
     return (
-        <View style={{width: "100%"}} >
+        <SafeAreaView style={{width: "100%", backgroundColor:"#373A4E"}} >
             {listContent}
-        </View>
+        </SafeAreaView>
     );
 }
 

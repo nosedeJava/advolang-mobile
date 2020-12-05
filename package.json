@@ -32,6 +32,7 @@
     "react-native-elements": "^3.0.0-alpha.1",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-jw-media-player": "^0.1.52",
+    "react-native-page-previewer": "^0.1.7",
     "react-native-paper": "^4.4.1",
     "react-native-picker-select": "^8.0.3",
     "react-native-reanimated": "~1.13.0",

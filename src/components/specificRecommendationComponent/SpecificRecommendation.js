@@ -28,7 +28,7 @@ export default function SpecificRecommendation({ route, navigation }) {
 
     const styles = StyleSheet.create({
         container: {
-            backgroundColor: '#FFF',
+            backgroundColor: 'black',
             flex: 1,
         },
         contentContainer: {
@@ -37,7 +37,7 @@ export default function SpecificRecommendation({ route, navigation }) {
         },
 
         generalContainer: {
-            backgroundColor: '#FFF',
+            backgroundColor: '#242847',
             flex: 1,
         },
         videoContainer: {
@@ -48,23 +48,19 @@ export default function SpecificRecommendation({ route, navigation }) {
 
     const generalContent = () => {
         return (
-            <CardBase style={{flex: 1, marginLeft: 0, marginRight: 0}}>
-                <Card.Title style={{fontSize: 20, fontWeight: "bold", padding: 15, textAlign: "left"}}>{currentRecom.title}</Card.Title>
+            <CardBase style={{flex: 1, marginLeft: 0, marginRight: 0, backgroundColor:"#585C78"}}>
+                <Card.Title style={{fontSize: 20, fontWeight: "bold", padding: 15, textAlign: "left", color:"white"}}>{currentRecom.title}</Card.Title>
                 <Card.Divider/>
-                <Text style={{padding: 10, textAlign: "left"}}>
+                <Text style={{padding: 10, textAlign: "left", color:"white"}}>
                     {currentRecom.description}
                 </Text>
                 <CardBase style={{marginBottom: 15}}>
-                    {rec(currentRecom)}
+                    <ResourceController recom={currentRecom} />
                 </CardBase>
             </CardBase>
         );
     }
 
-    const rec = (recom) => {
-        return <ResourceController resource={recom.resource} resourceType={recom.resourceType}/>
-
-    }
     const contentWithScrollView = () => {
         return(
             <ScrollView  contentContainerStyle={styles.videoContainer}>
